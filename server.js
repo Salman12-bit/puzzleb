@@ -17,10 +17,14 @@ app.use(express.json());
 app.use(cors());
 app.use("/uploads", express.static('./uploads'))
 
+app.get('/test' , (req , res) => {
+  res.send('Hellow World')
+})
+
 // Use of Router
 app.use(router)
 
-const port = process.env.PORT || 7100;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   console.log(`Server is Running on ${port} port`.bgMagenta)
